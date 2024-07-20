@@ -5,6 +5,11 @@ qdn basic
 
 https://github.com/Farama-Foundation/Gymnasium
 
-https://tutorials.pytorch.kr/intermediate/reinforcement_ppo.html
+https://pytorch.org/tutorials/intermediate/reinforcement_ppo.html
+
+or 
+
+https://pytorch.org/tutorials/intermediate/reinforcement_q_learning.html
+
 
 agent setup
