@@ -1,0 +1,57 @@
+For Upbit(korean) exchanges, the fee is 0.05%. So once you buy and sell it, you lose 0.1% of the fee.
+
+Usually, when the chart is fluctuating, there are several times a day when you can make a profit beyond the 0.1% fee wall.
+
+We created a system to react immediately when the trading started to burst and the chart went up, or when the selling suddenly went down and made a profit through a single-shot transaction.
+
+These single-shot transactions either analyze the flow of transaction data over the past 2-3 minutes or train with transaction records over the past 10 to 15 minutes at the most. In my experience, longer past data has not been very effective.
+
+
+
+Experience with reinforcement learning training process using PPO
+
+
+
+In the process of training agents to the stage where they can make a profit beyond the walls of fees, they show some performance (average 5 million steps) and then they don't trade whether they gave up.
+
+We don't buy or sell, we just wait and see.
+
+I think deep learning algorithms are telling you not to trade cryptocurrency. I only put chart data, but I think you can see the global economic trend.
+
+
+
+So I got rid of the fee and trained.
+
+No fees beyond this, so it makes a huge profit. However, there are so many transactions that if you exclude the fees, it's still negative.
+
+For example, we do hundreds of transactions in an hour that yield 0.025%.
+
+
+
+So after calculating the fee normally, I gave a penalty if I didn't buy it for a certain period of time.
+
+After a certain amount of training (usually after 5 million steps), it generates a profitable transaction.
+
+I thought I was successful. "Confident."
+
+But!!! If a guy that was working normally suddenly drops after buying, he doesn't sell it because he's afraid of penalties.
+
+There are times when you miss the timing of your hand-wringing, and you don't hand-wringing even if your profit exceeds -1%. For this guy, selling your hand-wringing is a penalty that's just as good as baseball.
+
+Whenever this happens, he suddenly becomes a long-term investor.
+
+"It's not my money, I don't sell it because I get a penalty."
+
+You wait with the idea that it's going to go up one day, and then you end up selling it a day later, but the problem is that you throw away a lot of opportunities to make a profit in that day, and you don't sell it even if it goes over -1% and it goes down to -5%.
+
+I found out that a sudden crash embarrasses not only people but also artificial intelligence.
+
+
+
+in conclusion,
+
+RL finds that data is important, but there are huge differences depending on how to give rewards and policies for rewards.
+
+Behavior patterns vary depending on how and at what point to reward and which behavior to penalize more.
+
+For example, in response to a momentary crash, you sold at -0.5%, preventing it from falling to -2%, and so the rewards are negative because you made a return of -0.5%. I found that these simple policies of compensation make training difficult and lower performance.
